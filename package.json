@@ -1,0 +1,33 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "difference calculator",
+  "main": "bin/gendiff.js",
+  "type": "module",
+  "dependencies": {
+    "commander": "^9.0.0",
+    "lodash": "^4.17.21"
+  },
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladimirkuvanovv/frontend-project-lvl2.git"
+  },
+  "author": "Vladimir Kuvanov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladimirkuvanovv/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/vladimirkuvanovv/frontend-project-lvl2#readme",
+  "devDependencies": {
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^28.1.0"
+  }
+}
