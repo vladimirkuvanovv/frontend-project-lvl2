@@ -8,12 +8,12 @@ lint-fix:
 	npx eslint --fix .
 
 lint:
-	yarn run eslint .
+	npx eslint .
 
 test:
 	npm test
 
-test-local:
+test-watch:
 	npx jest --watch
 
 test-coverage:

@@ -9,6 +9,6 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 
 describe('genDiff', () => {
   test('genDiff', () => {
-    expect(genDiff(getFixturePath('before.json'), getFixturePath('after.json'))).toBe(readFile(getFixturePath('simple_expected')));
+    expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'))).toBe(readFile(getFixturePath('pretty_expected')));
   });
 });
