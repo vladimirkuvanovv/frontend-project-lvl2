@@ -6,12 +6,9 @@ import {
 const INDENT = '  ';
 const EOL = '\n';
 
-const renderPretty = (tree) => buildPretty(tree);
-
 const buildPretty = (tree, level = 0) => {
   const offset = _.repeat(INDENT, level);
 
-  console.log(offset);
   const prettyNodes = tree.map((node) => {
     switch (node.type) {
       case UNCHANGED_TYPE:
@@ -24,10 +21,14 @@ const buildPretty = (tree, level = 0) => {
         return `${offset}  - ${node.key}: ${node.dataBefore}`;
       case ADDED_TYPE:
         return `${offset}  + ${node.key}: ${node.dataAfter}`;
+      default:
+        return `unknown ${node.type}`;
     }
   });
 
   return '{' + `\n${prettyNodes.join('\n')}\n` + '}';
 };
+
+const renderPretty = (tree) => buildPretty(tree);
 
 export default renderPretty;

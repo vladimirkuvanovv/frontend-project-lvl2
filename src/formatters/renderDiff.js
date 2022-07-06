@@ -9,7 +9,6 @@ const renderDiff = (tree, format) => {
       break;
     case 'pretty':
       return renderPretty(tree);
-      break;
     default:
       throw new Error(`unknown format ${format}`);
   }

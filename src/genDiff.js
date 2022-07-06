@@ -1,4 +1,3 @@
-import fs from 'fs';
 import path from 'path';
 import parse from './parsers.js';
 import buildTree from './builder.js';
