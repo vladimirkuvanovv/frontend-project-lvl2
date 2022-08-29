@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     # The type of machine to run the job on
+    name: Build and test
     runs-on: ubuntu-latest
 
     strategy:
@@ -17,6 +18,7 @@ jobs:
 
     steps:
       # Check-out repository under GitHub workspace
+      - name: Check out code
       # https://github.com/actions/checkout
       - uses: actions/checkout@v2
         # Step's name
@@ -29,15 +31,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install
         # Install project
-      - run: make install
+        run: make install
         # Add environment variables
         env:
           CI: true
       - name: Run linter
         # Run Linter
-      - run: make lint
+        run: make lint
       - name: Run tests
-      - run: make test
+        run: make test
       - name: Test & publish code coverage
         # Publish code coverage on Code Climate
         # https://github.com/paambaati/codeclimate-action
