@@ -6,7 +6,7 @@ import readFile from './readFile.js';
 
 const getFileExtension = (pathToFile) => path.extname(pathToFile).split('.').pop();
 
-const genDiff = (pathToFileBefore, pathToFileAfter, format = 'pretty') => {
+const genDiff = (pathToFileBefore, pathToFileAfter, format) => {
   const contentFromFileBefore = readFile(pathToFileBefore);
   const contentFromFileAfter = readFile(pathToFileAfter);
 

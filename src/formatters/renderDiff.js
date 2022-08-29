@@ -1,5 +1,5 @@
 import renderJson from './renderJson.js';
-import renderPretty from './renderPretty.js';
+import renderStylish from "./renderStylish.js";
 
 const renderDiff = (tree, format) => {
   switch (format) {
@@ -7,8 +7,8 @@ const renderDiff = (tree, format) => {
       return renderJson(tree);
     case 'plain':
       break;
-    case 'pretty':
-      return renderPretty(tree);
+    case 'stylish':
+      return renderStylish(tree);
     default:
       throw new Error(`unknown format ${format}`);
   }
