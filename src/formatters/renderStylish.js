@@ -19,14 +19,11 @@ const stringify = (value, parentOffset, level = 0) => {
     return value;
   }
 
-  // eslint-disable-next-line no-param-reassign
   parentOffset = level ? parentOffset : INDENT;
   const offset = _.repeat(INDENT, level + 1);
 
   const keys = Object.keys(value);
-  const nestedItem = keys.map((key) => {
-    return `${parentOffset}${offset}${key}: ${stringify(value[key], parentOffset, level + 1)}`;
-  });
+  const nestedItem = keys.map((key) => `${parentOffset}${offset}${key}: ${stringify(value[key], parentOffset, level + 1)}`);
 
   return `{${EOL}${nestedItem.join(EOL)}${EOL}${offset}}`;
 };
