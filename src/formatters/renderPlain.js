@@ -3,8 +3,10 @@ import {
   ADDED_TYPE, REMOVED_TYPE, CHANGED_TYPE, UNCHANGED_TYPE, NESTED_TYPE,
 } from './states.js';
 
+const EOL = '\n';
+
 const stringify = (value) => {
-  if (typeof value === 'boolean') {
+  if (_.isBoolean(value)) {
     return value ? 'true' : 'false';
   }
 
@@ -21,7 +23,7 @@ const renderPlain = (diff) => {
 
     switch (node.type) {
       case NESTED_TYPE:
-        return `${iter(node.children, [path]).join('\n')}`;
+        return `${iter(node.children, [path]).join(EOL)}`;
       case CHANGED_TYPE:
         return `Property '${path}' was updated. From ${stringify(node.dataBefore)} to ${stringify(node.dataAfter)}`;
       case REMOVED_TYPE:
@@ -36,7 +38,7 @@ const renderPlain = (diff) => {
   });
 
   const nodesForPlain = iter(diff, []);
-  return [...nodesForPlain].join('\n');
+  return [...nodesForPlain].join(EOL);
 };
 
 export default renderPlain;
