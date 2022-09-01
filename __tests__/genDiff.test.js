@@ -10,13 +10,13 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const expectedFiles = {
   stylish: readFile(getFixturePath('expectedStylish.txt')),
   plain: readFile(getFixturePath('expectedPlain.txt')),
-  // json: readFile('expected_json'),
+  json: readFile(getFixturePath('expectedJson.txt')),
 };
 
 const filesForTests = [
   ['file1.json', 'file2.json', 'stylish'],
   ['file1.yml', 'file2.yml', 'plain'],
-  // ['file1.json', 'file2.yaml', 'json'],
+  ['file1.json', 'file2.json', 'json'],
 ];
 
 describe('genDiff', () => {

@@ -1,5 +1,1 @@
-const renderJson = () => {
-
-};
-
-export default renderJson;
+export default (tree) => JSON.stringify(tree);
