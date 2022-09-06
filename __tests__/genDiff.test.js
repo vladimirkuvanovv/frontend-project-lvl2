@@ -1,3 +1,4 @@
+import { expect, test } from '@jest/globals';
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
 import genDiff from '../src/genDiff.js';
@@ -19,7 +20,7 @@ const filesForTests = [
   ['file1.json', 'file2.json', 'json'],
 ];
 
-describe('genDiff', () => {
+describe('positive cases', () => {
   test.each(filesForTests)('Compare %s with %s, format %s', (filepath1, filepath2, format) => {
     const file1 = getFixturePath(filepath1);
     const file2 = getFixturePath(filepath2);

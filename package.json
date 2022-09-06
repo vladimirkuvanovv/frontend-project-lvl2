@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/vladimirkuvanovv/frontend-project-lvl2#readme",
   "devDependencies": {
+    "@jest/globals": "^29.0.2",
     "eslint": "^8.16.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
