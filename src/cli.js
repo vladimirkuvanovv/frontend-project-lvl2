@@ -13,7 +13,6 @@ export default () => {
     .option('-f, --format <type>', 'output format', 'stylish')
     .action((filepath1, filepath2) => {
       console.log(genDiff(filepath1, filepath2, program.opts().format));
-    });
-
-  program.parse();
+    })
+    .parse();
 };
