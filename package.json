@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "difference calculator",
-  "main": "bin/gendiff.js",
+  "main": "src/cli.js",
   "type": "module",
   "dependencies": {
     "commander": "^9.0.0",
