@@ -47,14 +47,14 @@ const renderStylish = (diff, replacer = '    ') => {
         return makeLine(node.dataBefore, sign.UNCHANGED_TYPE);
       case CHANGED_TYPE:
         return [`${makeLine(node.dataBefore, sign.REMOVED_TYPE)}`,
-          `${makeLine(node.dataAfter, sign.ADDED_TYPE)}`].join('\n');
+          `${makeLine(node.dataAfter, sign.ADDED_TYPE)}`].join(EOL);
       default:
         throw new Error(`Type: ${node.type} is undefined`);
     }
   });
 
   const stylishDiff = iter(diff, 1);
-  return ['{', ...stylishDiff, '}'].join('\n');
+  return ['{', ...stylishDiff, '}'].join(EOL);
 };
 
 export default renderStylish;
