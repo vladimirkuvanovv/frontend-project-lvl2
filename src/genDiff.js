@@ -1,7 +1,7 @@
 import path from 'path';
 import parse from './parsers.js';
 import buildTree from './builder.js';
-import renderDiff from './formatters/renderDiff.js';
+import renderDiff from './formatters/index.js';
 import readFile from './readFile.js';
 
 const getFileExtension = (pathToFile) => path.extname(pathToFile).split('.').pop();

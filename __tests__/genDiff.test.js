@@ -28,3 +28,19 @@ describe('positive cases', () => {
     expect(genDiff(file1, file2, format)).toEqual(expectedFiles[format]);
   });
 });
+
+describe('negative cases', () => {
+  test('Check wrong file extension', () => {
+    const error = new Error('unknown file extension txt');
+
+    expect(() => {
+      genDiff(getFixturePath('wrong-file1.txt'), getFixturePath('wrong-file2.txt'));
+    }).toThrow(error);
+  });
+
+  test('Check wrong output format', () => {
+    const error = new Error('unknown format txt');
+
+    expect(() => genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'txt')).toThrow(error);
+  });
+});
