@@ -8,9 +8,7 @@ export default (tree, format) => {
       return renderJson(tree);
     case 'plain':
       return renderPlain(tree);
-    case 'stylish':
-      return renderStylish(tree);
     default:
-      throw new Error(`unknown format ${format}`);
+      return renderStylish(tree);
   }
 };
