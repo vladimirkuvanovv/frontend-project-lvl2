@@ -37,10 +37,4 @@ describe('negative cases', () => {
       genDiff(getFixturePath('wrong-file1.txt'), getFixturePath('wrong-file2.txt'));
     }).toThrow(error);
   });
-
-  test('Check wrong output format', () => {
-    const error = new Error('unknown format txt');
-
-    expect(() => genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'txt')).toThrow(error);
-  });
 });
