@@ -4,7 +4,7 @@ import buildTree from './builder.js';
 import renderDiff from './formatters/index.js';
 import readFile from './readFile.js';
 
-const getFileExtension = (pathToFile) => path.extname(pathToFile).split('.').pop();
+const getFileExtension = (pathToFile) => path.extname(pathToFile).slice(1);
 
 const genDiff = (pathToFileBefore, pathToFileAfter, format) => {
   const contentFromFileBefore = readFile(pathToFileBefore);
